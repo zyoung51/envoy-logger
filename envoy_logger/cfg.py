@@ -3,7 +3,6 @@ import sys
 from typing import Dict
 
 import yaml
-from influxdb_client import Point
 
 LOG = logging.getLogger("cfg")
 
@@ -37,9 +36,9 @@ class Config:
             sys.exit(1)
 
 
-    def apply_tags_to_inverter_point(self, p: Point, serial: str) -> None:
-        if serial in self.inverters.keys():
-            self.inverters[serial].apply_tags_to_point(p)
+#    def apply_tags_to_inverter_point(self, p: Point, serial: str) -> None:
+#        if serial in self.inverters.keys():
+#            self.inverters[serial].apply_tags_to_point(p)
 
 
 
@@ -48,9 +47,9 @@ class InverterConfig:
         self.serial = serial
         self.tags = data.get("tags", {})
 
-    def apply_tags_to_point(self, p: Point) -> None:
-        for k, v in self.tags.items():
-            p.tag(k, v)
+#    def apply_tags_to_point(self, p: Point) -> None:
+#        for k, v in self.tags.items():
+#            p.tag(k, v)
 
 
 def load_cfg(path: str):

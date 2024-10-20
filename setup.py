@@ -9,7 +9,7 @@ setuptools.setup(
     install_requires=[
         "requests",
         "appdirs",
-        "influxdb-client",
+        "influxdb",
         "PyYAML",
     ],
 )
